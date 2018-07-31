@@ -1,0 +1,56 @@
+CommitMsg:
+  CapitalizedSubject:
+    enabled: false
+
+  EmptyMessage:
+    enabled: false
+
+  TrailingPeriod:
+    enabled: true
+
+  TextWidth:
+    enabled: false
+
+PreCommit:
+  ALL:
+    on_warn: fail
+
+  AuthorEmail:
+    enabled: true
+
+  AuthorName:
+    enabled: true
+
+  MergeConflicts:
+    enabled: true
+
+  BundleCheck:
+    enabled: true
+
+  BundleAudit:
+    enabled: true
+
+  Reek:
+    enabled: true
+    description: 'Analyze with Reek'
+    required_executable: 'reek'
+    command: ['bundle', 'exec', 'reek']
+    install_command: 'gem install reek'
+    include: &1
+      - '**/*.gemspec'
+      - 'app/**/*.rb'
+      - 'config/**/*.rb'
+      - 'spec/**/*.rb'
+      - 'lib/**/*.rb'
+      - 'lib/**/*.rake'
+      - '**/Gemfile'
+      - '**/Rakefile'
+
+  RuboCop:
+    enabled: true
+    description: 'Analyze with RuboCop'
+    required_executable: 'rubocop'
+    command: ['bundle', 'exec', 'rubocop']
+    flags: ['--format=emacs', '--force-exclusion', '--display-cop-names']
+    install_command: 'gem install rubocop'
+    include: *1
