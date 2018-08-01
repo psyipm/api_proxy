@@ -1,0 +1,24 @@
+{
+  "ticket": {
+    "id": 1,
+    "state_name": "new",
+    "subject": "test ticket",
+    "assignee_id": 124321,
+    "reporter_id": 32141,
+    "deadline": "2018-07-23T09:38:45.900Z",
+    "created_at": "2018-07-09T09:38:48.311Z",
+    "messages": [],
+    "references": [],
+    "department": {
+      "id": "dc1a6de4-9eb3-49f8-8026-05b32b623640",
+      "title": "support",
+      "created_at": "2018-07-13T09:38:28.228Z"
+    },
+    "subject_query": {
+      "id": "b4ed13c5-ddb9-463e-81e7-0c15ff0e5332",
+      "title": "Order status",
+      "department_id": "dc1a6de4-9eb3-49f8-8026-05b32b623640",
+      "created_at": "2018-07-13T11:21:13.414Z"
+    }
+  }
+}

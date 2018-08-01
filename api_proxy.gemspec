@@ -2,16 +2,16 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tickets_proxy/version'
+require 'api_proxy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'tickets_proxy'
-  spec.version       = TicketsProxy::VERSION
+  spec.name          = 'api_proxy'
+  spec.version       = ApiProxy::VERSION
   spec.authors       = ['Igor Malinovskiy']
   spec.email         = ['igor.malinovskiy@netfixllc.org']
 
   spec.summary       = 'Proxy for tickets service'
-  spec.homepage      = 'https://github.com/psyipm/tickets_proxy'
+  spec.homepage      = 'https://github.com/psyipm/api_proxy'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -29,6 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'reek'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'webmock', '~> 3.4', '>= 3.4.2'
 
-  spec.add_dependency 'httparty', '~> 0.16.2'
+  spec.add_dependency 'activesupport', '>= 4.0'
+  spec.add_dependency 'api_signature', '~> 0.1.2'
+  spec.add_dependency 'httparty', '~> 0.15.7'
 end

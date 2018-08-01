@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'tickets_proxy'
+require 'api_proxy'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,5 +13,10 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before(:suite) do
+    # Set time zone
+    Time.zone = 'Pacific Time (US & Canada)'
   end
 end
