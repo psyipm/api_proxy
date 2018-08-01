@@ -4,7 +4,8 @@ require 'spec_helper'
 
 RSpec.describe ApiProxy::RequestOptionsBuilder do
   let(:env) { { 'REQUEST_METHOD' => 'GET', 'REQUEST_PATH' => '/_ts/tickets/1' } }
-  let(:builder) { described_class.new(env) }
+  let(:config) { ApiProxy.configuration(:default) }
+  let(:builder) { described_class.new(env, config) }
 
   it 'should build signature' do
     options = builder.options.stringify_keys

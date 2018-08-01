@@ -4,7 +4,7 @@ require 'api_signature'
 
 module ApiProxy
   class RequestOptionsBuilder
-    attr_reader :env
+    attr_reader :env, :config
 
     delegate :api_key,
              :api_secret,
@@ -12,10 +12,11 @@ module ApiProxy
              :api_port,
              :api_prefix,
              :url_scheme,
-             :request_starts_with, to: :ApiProxy
+             :request_starts_with, to: :config
 
-    def initialize(env)
+    def initialize(env, config)
       @env = env
+      @config = config
     end
 
     def options

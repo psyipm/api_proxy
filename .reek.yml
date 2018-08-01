@@ -10,3 +10,15 @@ detectors:
   FeatureEnvy:
     exclude:
       - "ApiProxy::Middleware#call"
+
+  Attribute:
+    exclude:
+      - "ApiProxy::Config"
+
+  TooManyInstanceVariables:
+    exclude:
+      - "ApiProxy::Config"
+
+  TooManyStatements:
+    exclude:
+      - "ApiProxy::Config"

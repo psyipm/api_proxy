@@ -12,7 +12,8 @@ RSpec.describe ApiProxy::Request do
   end
 
   let(:env) { { 'REQUEST_METHOD' => 'GET', 'REQUEST_PATH' => '/_ts/tickets/1' } }
-  let(:builder) { ApiProxy::RequestOptionsBuilder.new(env) }
+  let(:config) { ApiProxy.configuration(:default) }
+  let(:builder) { ApiProxy::RequestOptionsBuilder.new(env, config) }
 
   it 'should perform request' do
     request = described_class.new(builder)

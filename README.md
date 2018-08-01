@@ -1,8 +1,6 @@
 # ApiProxy
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/api_proxy`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a simple forwarding proxy for api requests
 
 ## Installation
 
@@ -22,7 +20,32 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# config/initializers/api_proxy.rb
+
+ApiProxy.configure(:my_namespace) do |config|
+  config.api_key = ENV['SERVICE_API_KEY']
+  config.api_secret = ENV['SERVICE_API_SECRET']
+
+  config.url_scheme = 'http'
+  config.api_host = 'localhost'
+  config.api_port = 3000
+
+  config.api_prefix = '/api/v1/'
+
+  config.request_starts_with = '/_some_key'
+end
+```
+
+```ruby
+# config/application.rb
+
+config.middleware.use ApiProxy::Middleware, :my_namespace
+```
+
+Then all requests, starting with `/_some_key` will be forwarded to your service
+
+`GET localhost:3010/_some_key/orders` => `GET localhost:3000/api/v1/orders`
 
 ## Development
 

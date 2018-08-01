@@ -14,6 +14,7 @@ module ApiProxy
       'content-type',
       'etag',
       'cache-control',
+      'content-length',
       'content-disposition',
       'content-transfer-encoding'
     ].freeze
