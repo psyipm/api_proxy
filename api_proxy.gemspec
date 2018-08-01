@@ -31,7 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'webmock', '~> 3.4', '>= 3.4.2'
 
-  spec.add_dependency 'activesupport', '>= 4.0'
   spec.add_dependency 'api_signature', '~> 0.1.2'
   spec.add_dependency 'httparty', '~> 0.15.7'
 end

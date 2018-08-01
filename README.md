@@ -1,3 +1,7 @@
+[![Build Status](https://semaphoreci.com/api/v1/igormalinovskiy/api_proxy/branches/master/shields_badge.svg)](https://semaphoreci.com/igormalinovskiy/api_proxy)
+[![Code Climate](https://codeclimate.com/github/psyipm/api_proxy/badges/gpa.svg)](https://codeclimate.com/github/psyipm/api_proxy)
+[![Gem Version](https://badge.fury.io/rb/api_proxy.svg)](https://badge.fury.io/rb/api_proxy)
+
 # ApiProxy
 
 This gem is a simple forwarding proxy for api requests

@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    api_proxy (0.1.0)
-      activesupport (>= 4.0)
+    api_proxy (0.1.1)
       api_signature (~> 0.1.2)
       httparty (~> 0.15.7)
 
