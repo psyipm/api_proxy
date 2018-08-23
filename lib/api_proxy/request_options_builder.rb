@@ -20,7 +20,7 @@ module ApiProxy
     end
 
     def options
-      { headers: signature_builder.headers, format: :json }
+      { headers: headers, format: :json }
     end
 
     def url
@@ -32,6 +32,12 @@ module ApiProxy
     end
 
     private
+
+    def headers
+      custom_headers = config.custom_headers.call(env)
+
+      signature_builder.headers.merge(custom_headers)
+    end
 
     def signature_builder
       @signature_builder ||= ApiSignature::Builder.new(request_params)

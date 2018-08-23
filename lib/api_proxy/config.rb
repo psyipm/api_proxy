@@ -2,7 +2,15 @@
 
 module ApiProxy
   class Config
-    attr_accessor :api_key, :api_secret, :url_scheme, :api_host, :api_port, :api_prefix, :request_starts_with
+    attr_accessor :api_key,
+                  :api_secret,
+                  :url_scheme,
+                  :api_host,
+                  :api_port,
+                  :api_prefix,
+                  :request_starts_with,
+                  :request_allowed,
+                  :custom_headers
 
     def initialize
       load_defaults
@@ -18,6 +26,9 @@ module ApiProxy
 
       @api_prefix = '/api/v1/'
       @request_starts_with = '/_ts'
+
+      @request_allowed = ->(_env) { true }
+      @custom_headers = ->(_env) { {} }
     end
   end
 end

@@ -8,7 +8,7 @@ module ApiProxy
     end
 
     def call(env)
-      return @app.call(env) unless env['REQUEST_PATH'].start_with?(@config.request_starts_with)
+      return @app.call(env) unless allow_request?(env)
 
       builder = RequestOptionsBuilder.new(env, @config)
       request = ApiProxy::Request.new(builder)
@@ -16,6 +16,12 @@ module ApiProxy
       response = request.result
 
       Rack::Response.new(response.to_s, response.code, request.headers)
+    end
+
+    def allow_request?(env)
+      return false unless env['REQUEST_PATH'].start_with?(@config.request_starts_with)
+
+      @config.request_allowed.call(env)
     end
   end
 end
