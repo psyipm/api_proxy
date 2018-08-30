@@ -1,14 +1,15 @@
 PATH
   remote: .
   specs:
-    api_proxy (0.1.2)
+    api_proxy (0.1.3)
+      activesupport (>= 4.0)
       api_signature (~> 0.1.2)
       httparty (>= 0.15)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -59,7 +60,7 @@ GEM
     hashdiff (0.3.7)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iniparse (1.4.4)

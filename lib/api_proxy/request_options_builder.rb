@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'api_signature'
+require 'rack'
 
 module ApiProxy
   class RequestOptionsBuilder
@@ -20,7 +21,7 @@ module ApiProxy
     end
 
     def options
-      { headers: headers, format: :json }
+      { headers: headers, body: body, format: :json }
     end
 
     def url
@@ -28,10 +29,18 @@ module ApiProxy
     end
 
     def request_method
-      env['REQUEST_METHOD'].to_s.downcase
+      request.request_method.downcase
     end
 
     private
+
+    def body
+      request.params.reject { |key, _value| config.reject_params.include?(key) }
+    end
+
+    def request
+      @request ||= Rack::Request.new(env)
+    end
 
     def headers
       custom_headers = config.custom_headers.call(env)
@@ -56,7 +65,7 @@ module ApiProxy
     end
 
     def path
-      request_path = env['REQUEST_PATH'].gsub(request_starts_with, '')
+      request_path = request.path.gsub(request_starts_with, '')
 
       File.join(api_prefix, request_path)
     end

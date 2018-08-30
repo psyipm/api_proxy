@@ -10,7 +10,8 @@ module ApiProxy
                   :api_prefix,
                   :request_starts_with,
                   :request_allowed,
-                  :custom_headers
+                  :custom_headers,
+                  :reject_params
 
     def initialize
       load_defaults
@@ -29,6 +30,8 @@ module ApiProxy
 
       @request_allowed = ->(_env) { true }
       @custom_headers = ->(_env) { {} }
+
+      @reject_params = %w[utf8 authenticity_token commit format controller action]
     end
   end
 end

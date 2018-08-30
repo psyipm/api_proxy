@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require 'api_proxy/version'
+require 'active_support/time'
+require 'active_support/time_with_zone'
+require 'active_support/core_ext/module'
 
 module ApiProxy
   autoload :Config, 'api_proxy/config'

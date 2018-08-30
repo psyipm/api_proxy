@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'rack'
 
 RSpec.describe ApiProxy::RequestOptionsBuilder do
-  let(:env) { { 'REQUEST_METHOD' => 'GET', 'REQUEST_PATH' => '/_ts/tickets/1' } }
+  let(:env) { Rack::MockRequest.env_for('/_ts/tickets/1', 'REQUEST_METHOD' => 'GET') }
   let(:config) { ApiProxy.configuration(:default) }
   let(:builder) { described_class.new(env, config) }
 
