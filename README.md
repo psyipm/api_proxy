@@ -31,11 +31,7 @@ ApiProxy.configure(:my_namespace) do |config|
   config.api_key = ENV['SERVICE_API_KEY']
   config.api_secret = ENV['SERVICE_API_SECRET']
 
-  config.url_scheme = 'http'
-  config.api_host = 'localhost'
-  config.api_port = 3000
-
-  config.api_prefix = '/api/v1/'
+  config.api_url = 'http://localhost:3002/api/v1'
 
   config.request_starts_with = '/_some_key'
 end

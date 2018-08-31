@@ -8,8 +8,9 @@ require 'active_support/core_ext/module'
 module ApiProxy
   autoload :Config, 'api_proxy/config'
   autoload :Middleware, 'api_proxy/middleware'
-  autoload :RequestOptionsBuilder, 'api_proxy/request_options_builder'
-  autoload :Request, 'api_proxy/request'
+  autoload :HeadersFilter, 'api_proxy/headers_filter'
+  autoload :SignedRequest, 'api_proxy/signed_request'
+  autoload :ResponseBuilder, 'api_proxy/response_builder'
 
   def self.configuration(namespace)
     @configuration ||= {}
