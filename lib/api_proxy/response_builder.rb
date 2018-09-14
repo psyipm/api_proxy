@@ -29,7 +29,7 @@ module ApiProxy
     private
 
     def request
-      @request ||= Rack::Request.new(@env)
+      @request ||= Rack::Request.new(env)
     end
 
     def result
@@ -46,7 +46,11 @@ module ApiProxy
     end
 
     def filtered_params
-      request.params.reject { |key, _value| config.reject_params.include?(key.to_s) }
+      params.reject { |key, _value| config.reject_params.include?(key.to_s) }
+    end
+
+    def params
+      @params ||= (env['action_dispatch.request.request_parameters'].presence || request.params)
     end
 
     def headers
