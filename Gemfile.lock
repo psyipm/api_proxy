@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    api_proxy (0.2.4)
+    api_proxy (0.2.5)
       activesupport (>= 4.0)
       api_signature (~> 0.1.2)
       httparty (>= 0.15)
@@ -9,14 +9,14 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.1)
+    activesupport (5.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    api_signature (0.1.2)
+    api_signature (0.1.4)
       activesupport (>= 4.0)
       rack (>= 1.6)
     ast (2.4.0)
@@ -58,9 +58,10 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashdiff (0.3.7)
-    httparty (0.16.2)
+    httparty (0.16.4)
+      mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.1.0)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iniparse (1.4.4)
@@ -72,6 +73,9 @@ GEM
       ruby_dep (~> 1.2)
     lumberjack (1.0.13)
     method_source (0.9.0)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
     minitest (5.11.3)
     multi_xml (0.6.0)
     nenv (0.3.0)
@@ -89,7 +93,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    rack (2.0.5)
+    rack (2.0.6)
     rainbow (3.0.0)
     rake (10.5.0)
     rb-fsevent (0.10.3)
