@@ -12,7 +12,7 @@ module ApiProxy
 
       return @app.call(env) unless builder.allow_request?
 
-      builder.response
+      builder.response.finish
     end
   end
 end
