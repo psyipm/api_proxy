@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    api_proxy (0.2.5)
+    api_proxy (0.2.6)
       activesupport (>= 4.0)
       api_signature (~> 0.1.2)
       httparty (>= 0.15)
@@ -9,14 +9,15 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.2)
+    activesupport (6.0.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+      zeitwerk (~> 2.2)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    api_signature (0.1.4)
+    api_signature (0.1.5)
       activesupport (>= 4.0)
       rack (>= 1.6)
     ast (2.4.0)
@@ -34,7 +35,7 @@ GEM
     coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.6)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     descendants_tracker (0.0.4)
@@ -58,10 +59,10 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashdiff (0.3.7)
-    httparty (0.16.4)
+    httparty (0.17.3)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.5.3)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iniparse (1.4.4)
@@ -73,10 +74,10 @@ GEM
       ruby_dep (~> 1.2)
     lumberjack (1.0.13)
     method_source (0.9.0)
-    mime-types (3.2.2)
+    mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2018.0812)
-    minitest (5.11.3)
+    mime-types-data (3.2019.1009)
+    minitest (5.14.0)
     multi_xml (0.6.0)
     nenv (0.3.0)
     notiffany (0.1.1)
@@ -93,7 +94,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
-    rack (2.0.6)
+    rack (2.2.2)
     rainbow (3.0.0)
     rake (10.5.0)
     rb-fsevent (0.10.3)
@@ -131,7 +132,7 @@ GEM
     shellany (0.0.1)
     thor (0.20.0)
     thread_safe (0.3.6)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.4.0)
     virtus (1.0.5)
@@ -143,6 +144,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
+    zeitwerk (2.2.2)
 
 PLATFORMS
   ruby
@@ -160,4 +162,4 @@ DEPENDENCIES
   webmock (~> 3.4, >= 3.4.2)
 
 BUNDLED WITH
-   1.16.2
+   1.17.3
