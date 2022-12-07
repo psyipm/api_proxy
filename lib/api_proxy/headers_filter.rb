@@ -17,6 +17,7 @@ module ApiProxy
 
     def filter
       @headers.select { |key, _value| ALLOWED_HEADERS.include?(key) }
+              .transform_values { |value| Array(value)[0] }
     end
   end
 end
