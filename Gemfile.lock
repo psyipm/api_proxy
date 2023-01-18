@@ -79,7 +79,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (5.0.1)
-    rack (3.0.2)
+    rack (3.0.4.1)
     rainbow (3.1.1)
     rake (10.5.0)
     rb-fsevent (0.11.2)
@@ -129,6 +129,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   api_proxy!
