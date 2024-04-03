@@ -20,9 +20,9 @@ module ApiProxy
 
     def response
       Rack::Response.new(
-        result.to_s,
+        result.body.to_s,
         result.code,
-        ApiProxy::HeadersFilter.new(result.headers).filter
+        response_headers(result)
       )
     end
 
@@ -42,7 +42,7 @@ module ApiProxy
     end
 
     def options
-      { namespace: namespace, body: filtered_params, headers: headers }
+      { namespace: namespace, body: filtered_params, headers: request_headers }
     end
 
     def filtered_params
@@ -53,8 +53,15 @@ module ApiProxy
       @params ||= (env['action_dispatch.request.request_parameters'].presence || request.params)
     end
 
-    def headers
+    def request_headers
       config.custom_headers.call(env)
+    end
+
+    def response_headers(response)
+      ApiProxy::HeadersFilter.new(
+        response.headers.merge('content-length' => response.body.size),
+        @config.allowed_headers
+      ).filter
     end
   end
 end

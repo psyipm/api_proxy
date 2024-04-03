@@ -34,6 +34,8 @@ ApiProxy.configure(:my_namespace) do |config|
   config.api_url = 'http://localhost:3002/api/v1'
 
   config.request_starts_with = '/_some_key'
+
+  config.allowed_headers = %w[content-type content-length]
 end
 ```
 
