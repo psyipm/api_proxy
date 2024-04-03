@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    api_proxy (0.2.7)
+    api_proxy (0.2.8)
       activesupport (>= 4.0)
       api_signature (~> 0.1.2)
       httparty (>= 0.15)
@@ -129,6 +129,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
 
 DEPENDENCIES
   api_proxy!
@@ -143,4 +144,4 @@ DEPENDENCIES
   webmock (~> 3.4, >= 3.4.2)
 
 BUNDLED WITH
-   2.3.25
+   2.4.19
