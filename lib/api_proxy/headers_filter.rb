@@ -8,7 +8,7 @@ module ApiProxy
     end
 
     def filter
-      @headers.select { |key, _value| @allowed_headers.include?(key) }
+      @headers.select { |key, value| @allowed_headers.include?(key) && value.present? }
               .transform_values { |value| Array(value)[0] }
     end
   end

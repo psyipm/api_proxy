@@ -59,7 +59,7 @@ module ApiProxy
 
     def response_headers(response)
       ApiProxy::HeadersFilter.new(
-        response.headers.merge('content-length' => response.body.size),
+        response.headers.merge('content-length' => response.body&.size),
         @config.allowed_headers
       ).filter
     end
