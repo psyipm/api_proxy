@@ -2,7 +2,7 @@
 
 module ApiProxy
   class HeadersFilter
-    def initialize(headers, allowed_headers)
+    def initialize(headers, allowed_headers = [])
       @headers = headers
       @allowed_headers = allowed_headers
     end

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'api_proxy/version'
-require 'active_support/time'
-require 'active_support/time_with_zone'
-require 'active_support/core_ext/module'
+
+require 'active_support/all'
 
 module ApiProxy
+  extend ActiveSupport::Autoload
+
   autoload :Config, 'api_proxy/config'
   autoload :Middleware, 'api_proxy/middleware'
   autoload :HeadersFilter, 'api_proxy/headers_filter'
