@@ -16,7 +16,7 @@ module ApiProxy
     end
 
     def perform
-      self.class.send(request_method, url, headers: headers, body: body, format: :json)
+      self.class.send(request_method, url, headers: headers, body: body, query: query, format: :json)
     end
 
     private
@@ -27,6 +27,10 @@ module ApiProxy
 
     def body
       options[:body]
+    end
+
+    def query
+      options[:query]
     end
 
     def signature_headers
