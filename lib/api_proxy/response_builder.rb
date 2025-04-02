@@ -42,7 +42,15 @@ module ApiProxy
     end
 
     def options
-      { namespace: namespace, body: filtered_params, headers: request_headers }
+      { namespace: namespace, headers: request_headers }.tap do |hash|
+        hash[params_key] = filtered_params
+      end
+    end
+
+    def params_key
+      return :query if request.request_method.to_s.downcase == 'get'
+
+      :body
     end
 
     def filtered_params
